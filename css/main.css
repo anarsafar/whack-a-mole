@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+  font-family: "Amatic SC", cursive;
+  background: #f1c40f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.score {
+  background: #f7dc6f;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+button {
+  background: #f7dc6f;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  font-family: "Amatic SC", cursive;
+}
+
+button:hover {
+  filter: brightness(80%);
+}
+
+button:focus {
+  outline: none;
+}
+
+.game-container {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url(../images/dirt.png) bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url("../images/mole.png") bottom center no-repeat;
+  background-size: 65%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
+
+@media screen and (max-width: 650px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-container {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .game-container {
+    width: 375px;
+  }
+  .hole::after {
+    bottom: -15px;
+  }
+}
